@@ -1,0 +1,17 @@
+﻿services:
+  database.mysql:
+    image: mysql:8.0.32
+    container_name: database.mysql
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "true"
+      MYSQL_DATABASE: "demojsonefdb"
+      MYSQL_USER: api
+      MYSQL_PASSWORD: 123456@qwerty
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-db:/var/lib/mysql
+
+volumes:
+    mysql-db:

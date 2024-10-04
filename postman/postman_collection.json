@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "1bf62207-3024-410d-9886-6a1f12ce9a97",
+		"name": "Temp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1269704"
+	},
+	"item": [
+		{
+			"name": "DemoJsonEF",
+			"item": [
+				{
+					"name": "Get ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5096/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5096",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Schema",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"name\": { \"type\": \"string\" },\n            \"age\": { \"type\": \"integer\" }\n        },\n        \"required\": [ \"name\", \"age\" ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5096/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5096",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Schema",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"schemaId\": 1,\n    \"data\": {\n        \"name\": \"John Doe\",\n        \"age\": 30\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5096/validateschema",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5096",
+							"path": [
+								"validateschema"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
